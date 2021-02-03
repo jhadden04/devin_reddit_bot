@@ -32,6 +32,7 @@ phrase = "$"
 all_stocks = []
 rankings = {}
 stock_prices = {}
+amount = {}
 for comment in reddit.subreddit('wallstreetbets').stream.comments():
     if phrase in comment.body:
         index = comment.body.index(phrase)
@@ -80,5 +81,8 @@ for comment in reddit.subreddit('wallstreetbets').stream.comments():
             except:
                 continue
         # print(rankings)
-        print(largest)
+        for i in range(len(largest)-1):
+            amount[largest[i]] = rankings[largest[i]]
+        print(amount)
+        # print(largest)
         print(stock_prices)
