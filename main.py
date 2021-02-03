@@ -84,5 +84,5 @@ for comment in reddit.subreddit('wallstreetbets').stream.comments():
         for i in range(len(largest)-1):
             amount[largest[i]] = rankings[largest[i]]
         print(amount)
-        # print(largest)
+        print(largest)
         print(stock_prices)
